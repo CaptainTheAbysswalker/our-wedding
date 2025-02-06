@@ -3,16 +3,15 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <main className={styles.main}>
-    <div className="language-selector">
-        <button >English</button>
-        <button >Русский</button>
+    <div className={styles['language-selector']}>
+        <button >Eng</button>
+        <button >Ру</button>
     </div>
 
     <section className={styles.hero}>
         <div className={styles['hero-content']}>
-            <img src="path-to-your-photo.jpg" alt="Aлександр & Виктория" />
             <div className={styles.overlay}>
-                <h1 id="names">Александр & Виктория</h1>
+                <h1 id="names">Alexandr & Viktoria</h1>
                 <p id="wedding-date">Wedding Date: 13.09.2025</p>
                 <p id="quote" className={styles.quote}>Together forever</p>
             </div>
@@ -65,13 +64,13 @@ export default function Home() {
         <div id="map"></div>
     </section>
 
-    <section className="buttons">
+    <section className={styles['buttons']}>
         <a href="#" className={styles['calendar-btn']} id="calendar-btn">Add to Calendar</a>
         <a href="#" className={styles['accept-btn']} id="accept-btn">Accept the Invitation</a>
     </section>
 
-    <footer>
-        <p id="footer-text">&copy; 2025 Wedding of Александр & Виктория. All rights reserved.</p>
+    <footer className={styles['footer']}>
+        <p id="footer-text">&copy; 2025 Wedding of Alexandr & Viktoria. All rights reserved.</p>
     </footer>
   </main>
   );
