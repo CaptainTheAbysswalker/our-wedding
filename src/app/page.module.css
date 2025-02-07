@@ -75,6 +75,17 @@ body {
   background-color: #d9b00f;
 }
 
+/* Greeting Section */
+
+.greeting-section {
+    padding: 50px;
+    background-color: #fff;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
 /* Form Section */
 .form-section {
   background-color: #fff;
@@ -128,7 +139,7 @@ body {
 .schedule-section {
   padding: 50px;
   background-color: #fff;
-  text-align: center;
+  text-align: left;
   max-width: 500px; /* Set max-width for the schedule */
   margin: 0 auto;
 }

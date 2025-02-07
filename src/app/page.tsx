@@ -1,5 +1,7 @@
 import styles from "./page.module.css";
 
+const guests = ['мама', 'папа'];
+
 export default function Home() {
   return (
     <main className={styles.main}>
@@ -16,6 +18,10 @@ export default function Home() {
                 <p id="quote" className={styles.quote}>Together forever</p>
             </div>
         </div>
+    </section>
+    <section className={styles['greeting-section']}>
+        <h2 id="greetings-title">Дорогие {guests}</h2>
+        <p id="greetings">С огромным удовольствием приглашаем Вас на свадьбу</p>
     </section>
 
     <section className={styles['form-section']}>
@@ -46,11 +52,12 @@ export default function Home() {
     <section className={styles['schedule-section']}>
         <h2 id="schedule-title">Wedding Schedule</h2>
         <ul className={styles['schedule-list']}>
-            <li><strong>10:00 AM</strong> - Ceremony begins at [Venue Name]</li>
-            <li><strong>12:00 PM</strong> - Cocktail hour</li>
-            <li><strong>1:00 PM</strong> - Wedding reception and dinner</li>
-            <li><strong>3:00 PM</strong> - Dancing and celebration</li>
-            <li><strong>5:00 PM</strong> - Send-off and final goodbyes</li>
+            <li><strong>16:00 PM</strong> - Сбор гостей/фуршет</li>
+            <li><strong>16:40 PM</strong> - Церемония</li>
+            <li><strong>17:00 PM</strong> - Праздничный ужин</li>
+            <li><strong>21:00 PM</strong> - Торт</li>
+            <li><strong>22:00 PM</strong> - Танцы</li>
+            <li><strong>23:00 PM</strong> - Send-off and final goodbyes</li>
         </ul>
     </section>
 
