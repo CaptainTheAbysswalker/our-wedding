@@ -1,15 +1,26 @@
-import styles from "./page.module.css";
+'use client';
 
-const guests = ['мама', 'папа'];
+import styles from "./page.module.css";
+import Script from "next/script";
+import React, { useEffect } from "react";
+import { initMap } from "./helpers/map";
+
+// const guests = ['мама', 'папа'];
 
 export default function Home() {
+  useEffect(() => {
+    initMap();
+  }, [])
+
   return (
     <main className={styles.main}>
+      <Script src={`https://api-maps.yandex.ru/v3/?apikey=${process.env.NEXT_PUBLIC_YANDEX_API_KEY}&lang=ru_RU`}
+      strategy="beforeInteractive"
+     />
     {/* <div className={styles['language-selector']}>
         <button >Eng</button>
         <button >Ру</button>
     </div> */}
-
     <div className={styles.hero}>
         <div className={styles['hero-content']}>
             <div className={styles.overlay}>
@@ -83,9 +94,7 @@ export default function Home() {
         </form>
     </section>
 
-    <section className={styles['map-section']}>
-        <div id="map"></div>
-    </section>
+    <div id="map" />
 
     <section className={styles['buttons']}>
         <a href="#" className={styles['calendar-btn']} id="calendar-btn">Добавить в календарь</a>
