@@ -41,7 +41,6 @@ body {
 
 .overlay h1 {
   font-family: 'Great Vibes', cursive; /* Fancy font for names */
-  font-size: 4rem;
 }
 
 .overlay p {
@@ -77,22 +76,14 @@ body {
 
 /* Greeting Section */
 
-.greeting-section {
-    padding: 50px;
-    background-color: #fff;
-    text-align: center;
-    max-width: 500px;
-    margin: 0 auto;
-    width: 100%;
-  }
+.greeting-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
 
 /* Form Section */
 .form-section {
-  background-color: #fff;
-  padding: 50px;
-  text-align: center;
-  max-width: 500px; /* Set max-width for the form */
-  margin: 0 auto;
+
 }
 
 .form-section h2 {
@@ -137,11 +128,6 @@ body {
 
 /* Schedule Section */
 .schedule-section {
-  padding: 50px;
-  background-color: #fff;
-  text-align: left;
-  max-width: 500px; /* Set max-width for the schedule */
-  margin: 0 auto;
 }
 
 .schedule-section h2 {
@@ -167,12 +153,8 @@ body {
 }
 
 /* Invitation Text Section */
-.invitation-text {
-  padding: 50px;
-  background-color: #f5f5f5;
-  text-align: center;
-  max-width: 500px; /* Set max-width for the invitation text */
-  margin: 0 auto;
+.invitation-text, .dressCode-section {
+
 }
 
 .invitation-text h2 {
@@ -234,4 +216,9 @@ body {
   font-family: 'Quicksand', sans-serif; /* Body font for footer */
 }
 
-
+@media screen and (min-width: 852px){
+    .overlay h1 {
+        font-size: 4rem;
+        transform: none;
+      }
+}

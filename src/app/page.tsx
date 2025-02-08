@@ -5,23 +5,57 @@ const guests = ['мама', 'папа'];
 export default function Home() {
   return (
     <main className={styles.main}>
-    <div className={styles['language-selector']}>
+    {/* <div className={styles['language-selector']}>
         <button >Eng</button>
         <button >Ру</button>
-    </div>
+    </div> */}
 
-    <section className={styles.hero}>
+    <div className={styles.hero}>
         <div className={styles['hero-content']}>
             <div className={styles.overlay}>
-                <h1 id="names">Alexandr & Viktoria</h1>
-                <p id="wedding-date">Wedding Date: 13.09.2025</p>
+                <h1 id="names">Александр & Виктория</h1>
+                <p id="wedding-date">13.09.2025</p>
                 <p id="quote" className={styles.quote}>Together forever</p>
             </div>
         </div>
-    </section>
+    </div>
     <section className={styles['greeting-section']}>
-        <h2 id="greetings-title">Дорогие {guests}</h2>
+        <h2 id="greetings-title">Дорогие гости!</h2>
         <p id="greetings">С огромным удовольствием приглашаем Вас на свадьбу</p>
+    </section>
+    <section className={styles['schedule-section']}>
+        <h2 id="schedule-title">Расписание</h2>
+        <ul className={styles['schedule-list']}>
+            <li><strong>15:30</strong> - Трансфер</li>
+            <li><strong>16:00</strong> - Сбор гостей/фуршет</li>
+            <li><strong>16:40</strong> - Церемония</li>
+            <li><strong>17:00</strong> - Праздничный ужин</li>
+            <li><strong>21:00</strong> - Торт</li>
+            <li><strong>22:00</strong> - Танцы</li>
+            <li><strong>23:00</strong> - Завершение вечера/трансфер</li>
+        </ul>
+    </section>
+
+<section className={styles['dressCode-section']}>
+    <h2 id="dressCode-title">dress code</h2>
+    <p id="dressCode">
+    Надевайте всё самое нарядное и красивое и обязательно берите с собой хорошее настроение!</p>
+</section>
+
+    <section className={styles['presents-section']}>
+        <h2 id="presents-title">Подарки</h2>
+        <p id="presents-text">
+        Сразу после свадьбы мы улетаем в путешествие, поэтому просим не обременять себя выбором цветов, Ваше присутствие скрасит этот день ярче любых букетов!
+        </p>
+    </section>
+
+    <section className={styles['details']}>
+        <h2 id="details-title">Детали</h2>
+        <ul className={styles['details-list']}>
+            <li>Если вы подготовили для нас сюрприз или творческий подарок, не забудьте предупредить нашy ведущyю. Она поможет воплотить вашу идею или отговорит вас, и ответит на все вопросы.</li>
+            <li>Не волнуйтесь, если вдруг не с кем оставить малыша. Мы очень рады видеть на своем празднике всю Вашу семью. На нашем празднике будет организован досуг для детей. Взрослые могут спокойно насладиться праздником.</li>
+            <li>не волнуйтесь о том, как потом добраться на наш праздник. Всех желающих будет ожидать трансфер в 15:30 который также в 00:00 совершит обратный маршрут в Санкт-Петербург</li>
+        </ul>
     </section>
 
     <section className={styles['form-section']}>
@@ -45,35 +79,17 @@ export default function Home() {
                 <option value="no">No</option>
             </select>
 
-            <button type="submit" className={styles['submit-btn']} id="submit-btn">Submit</button>
+            <button type="submit" className={styles['submit-btn']} id="submit-btn">Отправить</button>
         </form>
     </section>
 
-    <section className={styles['schedule-section']}>
-        <h2 id="schedule-title">Wedding Schedule</h2>
-        <ul className={styles['schedule-list']}>
-            <li><strong>16:00 PM</strong> - Сбор гостей/фуршет</li>
-            <li><strong>16:40 PM</strong> - Церемония</li>
-            <li><strong>17:00 PM</strong> - Праздничный ужин</li>
-            <li><strong>21:00 PM</strong> - Торт</li>
-            <li><strong>22:00 PM</strong> - Танцы</li>
-            <li><strong>23:00 PM</strong> - Send-off and final goodbyes</li>
-        </ul>
-    </section>
-
-    <section className={styles['invitation-text']}>
-        <h2 id="invitation-title">Our Invitation</h2>
-        <p id="invitation-text">{`Dear guests, we are excited to celebrate our special day with you. Your presence means the world to us, and we can't wait to share this memorable moment with you.`}</p>
-    </section>
-
     <section className={styles['map-section']}>
-        <h2 id="map-title">Location</h2>
         <div id="map"></div>
     </section>
 
     <section className={styles['buttons']}>
-        <a href="#" className={styles['calendar-btn']} id="calendar-btn">Add to Calendar</a>
-        <a href="#" className={styles['accept-btn']} id="accept-btn">Accept the Invitation</a>
+        <a href="#" className={styles['calendar-btn']} id="calendar-btn">Добавить в календарь</a>
+        <a href="#" className={styles['accept-btn']} id="accept-btn">Принять приглашение</a>
     </section>
 
     <footer className={styles['footer']}>
