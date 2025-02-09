@@ -5,7 +5,7 @@ import Script from "next/script";
 import React, { useEffect } from "react";
 import { initMap } from "./helpers/map";
 
-// const guests = ['мама', 'папа'];
+import {guestsList} from './guests-list';
 
 export default function Home() {
   useEffect(() => {
@@ -97,7 +97,7 @@ export default function Home() {
     <div id="map" />
 
     <section className={styles['buttons']}>
-        <a href="#" className={styles['calendar-btn']} id="calendar-btn">Добавить в календарь</a>
+        {/* <a href="#" className={styles['calendar-btn']} id="calendar-btn">Добавить в календарь</a> */}
         <a href="#" className={styles['accept-btn']} id="accept-btn">Принять приглашение</a>
     </section>
 
