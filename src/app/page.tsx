@@ -5,7 +5,7 @@ import Script from "next/script";
 import React, { useEffect } from "react";
 import { initMap } from "./helpers/map";
 
-import {guestsList} from './guests-list';
+// import {guestsList} from './guests-list';
 import Image from "next/image";
 import HeroImage from '../../public/images/hero.jpg';
 import Arc from '../../public/icons/arc.gif';
