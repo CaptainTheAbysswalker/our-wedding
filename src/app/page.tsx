@@ -16,6 +16,7 @@ import Dinner from '../../public/icons/dinner.gif';
 import Cake from '../../public/icons/cake.gif';
 import Finish from '../../public/icons/finish.gif';
 import { useSearchParams } from "next/navigation";
+import { ConfettiFireworks } from "./button";
 
 export default function Home() {
   useEffect(() => {
@@ -104,7 +105,7 @@ export default function Home() {
 
     <section className={styles['buttons']}>
         {/* <a href="#" className={styles['calendar-btn']} id="calendar-btn">Добавить в календарь</a> */}
-        <a href="#" className={styles['accept-btn']} id="accept-btn">Принять приглашение</a>
+        <ConfettiFireworks/>
     </section>
 
     <div id="map" />

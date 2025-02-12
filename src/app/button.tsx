@@ -36,7 +36,7 @@ export function ConfettiFireworks() {
 
   return (
     <div className="relative">
-      <Button onClick={handleClick}>Trigger Fireworks</Button>
+      <Button onClick={handleClick}>Принять приглашение</Button>
     </div>
   );
 }
