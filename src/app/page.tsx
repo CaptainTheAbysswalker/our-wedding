@@ -17,6 +17,7 @@ import Cake from '../../public/icons/cake.gif';
 import Finish from '../../public/icons/finish.gif';
 import { useSearchParams } from "next/navigation";
 import { ConfettiFireworks } from "./button";
+import { ScrollProgressDemo } from "@/components/scroll-progress/scroll";
 
 export default function Home() {
   useEffect(() => {
@@ -33,6 +34,8 @@ export default function Home() {
   }
 
   return (
+    <>
+    <ScrollProgressDemo />
     <main className={styles.main}>
       <Script src={`https://api-maps.yandex.ru/v3/?apikey=${process.env.NEXT_PUBLIC_YANDEX_API_KEY}&lang=ru_RU`}
       strategy="beforeInteractive"
@@ -114,5 +117,6 @@ export default function Home() {
         <p id="footer-text">&copy; 2025 Wedding of Alexandr & Viktoria. All rights reserved.</p>
     </footer>
   </main>
+  </>
   );
 }
