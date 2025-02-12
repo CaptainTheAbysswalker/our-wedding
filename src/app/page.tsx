@@ -5,7 +5,7 @@ import Script from "next/script";
 import React, { useEffect } from "react";
 import { initMap } from "./helpers/map";
 
-// import {guestsList} from './guests-list';
+import {guestsList} from './guests-list';
 import Image from "next/image";
 import HeroImage from '../../public/images/hero.jpg';
 import Arc from '../../public/icons/arc.gif';
@@ -15,11 +15,21 @@ import Dance from '../../public/icons/dance.gif';
 import Dinner from '../../public/icons/dinner.gif';
 import Cake from '../../public/icons/cake.gif';
 import Finish from '../../public/icons/finish.gif';
+import { useSearchParams } from "next/navigation";
 
 export default function Home() {
   useEffect(() => {
     initMap();
   }, [])
+
+  const searchParams = useSearchParams();
+  const guest = searchParams.get('guest');
+  let guestName = 'Дорогие гости';
+
+  if (guest) {
+    const guestFromUrl = guestsList[`${guest}`];
+    guestName = guestFromUrl;
+  }
 
   return (
     <main className={styles.main}>
@@ -37,8 +47,22 @@ export default function Home() {
         </div>
     </div>
     <section className={styles['greeting-section']}>
-        <h2 id="greetings-title">Дорогие гости!</h2>
-        <p id="greetings">С огромным удовольствием приглашаем Вас на свадьбу</p>
+        <h2 id="greetings-title">{guestName}!</h2>
+        <p id="greetings">С огромным удовольствием приглашаем Вас на нашу свадьбу, которая состоится 13 сентября 2025 года</p>
+    </section>
+<section className={styles['dressCode-section']}>
+    <h2 id="dressCode-title">Dress code</h2>
+    <p id="dressCode">
+    Надевайте всё самое нарядное и красивое и обязательно берите с собой хорошее настроение!</p>
+</section>
+    <section className={styles['details']}>
+        <h2 id="details-title">Детали</h2>
+        <ul className={styles['details-list']}>
+        <li>Сразу после свадьбы мы улетаем в путешествие, поэтому просим не обременять себя выбором цветов, Ваше присутствие скрасит этот день ярче любых букетов!</li>
+        <li>Как добраться на наш праздник? Всех желающих будет ожидать трансфер в 15:30, который также в 00:00 совершит обратный маршрут в Санкт-Петербург</li>
+        <li>Не волнуйтесь, если вдруг не с кем оставить малыша. Мы очень рады видеть на своем празднике всю Вашу семью. На нашем празднике будет организован досуг для детей. Взрослые могут спокойно насладиться праздником.</li>
+        <li>Если вы подготовили для нас сюрприз или творческий подарок, не забудьте предупредить нашy ведущyю. Она поможет воплотить вашу идею или отговорит вас, и ответит на все вопросы.</li>
+        </ul>
     </section>
     <section className={styles['schedule-section']}>
         <h2 id="schedule-title">Свадебное расписание</h2>
@@ -53,44 +77,27 @@ export default function Home() {
         </ul>
     </section>
 
-<section className={styles['dressCode-section']}>
-    <h2 id="dressCode-title">Dress code</h2>
-    <p id="dressCode">
-    Надевайте всё самое нарядное и красивое и обязательно берите с собой хорошее настроение!</p>
-</section>
-
-    <section className={styles['presents-section']}>
-        <h2 id="presents-title">Подарки</h2>
-        <p id="presents-text">
-        Сразу после свадьбы мы улетаем в путешествие, поэтому просим не обременять себя выбором цветов, Ваше присутствие скрасит этот день ярче любых букетов!
-        </p>
-    </section>
-
-    <section className={styles['details']}>
-        <h2 id="details-title">Детали</h2>
-        <ul className={styles['details-list']}>
-        <li>Как добраться на наш праздник? Всех желающих будет ожидать трансфер в 15:30, который также в 00:00 совершит обратный маршрут в Санкт-Петербург</li>
-        <li>Не волнуйтесь, если вдруг не с кем оставить малыша. Мы очень рады видеть на своем празднике всю Вашу семью. На нашем празднике будет организован досуг для детей. Взрослые могут спокойно насладиться праздником.</li>
-        <li>Если вы подготовили для нас сюрприз или творческий подарок, не забудьте предупредить нашy ведущyю. Она поможет воплотить вашу идею или отговорит вас, и ответит на все вопросы.</li>
-        </ul>
-    </section>
-
     <section className={styles['form-section']}>
-        <h2 id="form-title">Ответьте на несколько вопросов</h2>
+        <h2 id="form-title">Пожалуйста, oтветьте на несколько вопросов</h2>
         <form className={styles['wedding-form']}>
-            <label id="transport-label">Потребуется ли вам трансфер?</label>
-            <select id="transport" name="transport">
-                <option value="yes1">Только до торжества</option>
-                <option value="yes2">Только после торжества</option>
-                <option value="yes3">До и после торжества</option>
-                <option value="no">Не нужен</option>
-            </select>
+            < label id="transfer">Потребуется ли вам трансфер?</label>
+                <input name="transfer" value="before" id='before' type="radio" />
+                <label id="before" htmlFor="before">Tолько до торжества</label>
+                <input name="transfer" value="after" id="after" type="radio" />
+                <label id="after" htmlFor="after"> Только после торжества</label>
+                <input name="transfer" value="yes" id="yes" type="radio" />
+                 <label id="yes" htmlFor="yes">До и после торжества</label>
+                <input name="transfer" value="no" type="radio" />
+                <label htmlFor="no">Нет</label>
             <label id="alcohol-label">Какой алкоголь предпочитаете?</label>
             <input type="text" id="alcohol" name="alcohol" placeholder="e.g. Red wine, beer" />
             <label id="diet-label">У вас есть какие-то ограничения в еде?</label>
             <input type="text" id="diet" name="diet" placeholder="вегетарианец, алергия на мороженое" />
-            <label id="child-label">Будет ли с вами на празднике ребенок?</label>
-            <input type="text" id="child" name="child" placeholder="Будет ли с вами ребенок?" />
+            <label id="child">Будет ли с вами на празднике ребенок?</label>
+            <input type="radio" id="yes" name="child" value='yes' />
+            <label id="yes" htmlFor="yes">Да</label>
+            <input type="radio" id="no" name="child" value='no' />
+            <label id="no" htmlFor="no">Нет</label>
             <button type="submit" className={styles['submit-btn']} id="submit-btn">Отправить</button>
         </form>
     </section>

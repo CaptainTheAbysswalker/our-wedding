@@ -1,4 +1,4 @@
-export const guestsList = {
+export const guestsList: {[key: string]: string} = {
     '1V': 'Дорогие мама и папа',
     '2V': 'Дорогие Илья и Влада',
     '3V': 'Дорогие Янис и Ирина',
