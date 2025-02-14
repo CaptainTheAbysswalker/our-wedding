@@ -3,7 +3,6 @@
 import styles from "./page.module.css";
 import Script from "next/script";
 import React, { useEffect } from "react";
-import { initMap } from "./helpers/map";
 
 import {guestsList} from './guests-list';
 import Image from "next/image";
@@ -18,12 +17,11 @@ import Finish from '../../public/icons/finish.gif';
 import { useSearchParams } from "next/navigation";
 import { ConfettiFireworks } from "./button";
 import { ScrollProgressDemo } from "@/components/scroll-progress/scroll";
+import { Loader } from "@/components/loader";
+import {Map} from "@/components/map";
 
 export default function Home() {
-  useEffect(() => {
-    initMap();
-  }, [])
-
+    const [loading, setLoading] = React.useState(true);
   const searchParams = useSearchParams();
   const guest = searchParams.get('guest');
   let guestName = 'Дорогие гости';
@@ -33,8 +31,14 @@ export default function Home() {
     guestName = guestFromUrl;
   }
 
-  return (
+  useEffect(() => {
+    setTimeout(() => { setLoading(false) ; }, 2000);
+  }, [])
+
+
+  return  (
     <>
+    {loading && <Loader/>}
     <ScrollProgressDemo />
     <main className={styles.main}>
       <Script src={`https://api-maps.yandex.ru/v3/?apikey=${process.env.NEXT_PUBLIC_YANDEX_API_KEY}&lang=ru_RU`}
@@ -106,13 +110,13 @@ export default function Home() {
         </form>
     </section>
 
-    <section className={styles['buttons']}>
+    <div className={styles['buttons']}>
         {/* <a href="#" className={styles['calendar-btn']} id="calendar-btn">Добавить в календарь</a> */}
         <ConfettiFireworks/>
-    </section>
+    </div>
 
-    <div id="map" />
 
+    <Map/>
     <footer className={styles['footer']}>
         <p id="footer-text">&copy; 2025 Wedding of Alexandr & Viktoria. All rights reserved.</p>
     </footer>
