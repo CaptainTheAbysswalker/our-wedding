@@ -1,0 +1,89 @@
+{
+  "title": "Пожалуйста, oтветьте на несколько вопросов",
+  "logoPosition": "right",
+  "pages": [
+    {
+      "name": "page1",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "transfer",
+          "title": "Потребуется ли вам трансфер?",
+          "isRequired": true,
+          "requiredErrorText": "Пожалуйста, выберите",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Tолько до торжества"
+            },
+            {
+              "value": "Item 2",
+              "text": "Только после торжества"
+            },
+            {
+              "value": "Item 3",
+              "text": "До и после торжества"
+            },
+            {
+              "value": "Item 4",
+              "text": "Не потребуется"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "name": "alco",
+          "title": "Какой алкоголь предпочитаете?",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Красное вино"
+            },
+            {
+              "value": "Item 2",
+              "text": "Белое вино"
+            },
+            {
+              "value": "Item 3",
+              "text": "Шампанское"
+            },
+            {
+              "value": "Item 4",
+              "text": "Виски/коньяк"
+            },
+            {
+              "value": "Item 5",
+              "text": "Водка"
+            },
+            {
+              "value": "Item 7",
+              "text": "Не буду пить алкоголь"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "restrictions",
+          "title": "У вас есть какие-то ограничения в еде?"
+        },
+        {
+          "type": "radiogroup",
+          "name": "withChild",
+          "title": "Будет ли с вами на празднике ребенок?",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Да"
+            },
+            {
+              "value": "Item 2",
+              "text": "Нет"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "showPageTitles": false,
+  "completeText": "Отправить"
+}

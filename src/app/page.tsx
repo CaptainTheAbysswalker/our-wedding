@@ -19,6 +19,7 @@ import { ConfettiFireworks } from "./button";
 import { ScrollProgressDemo } from "@/components/scroll-progress/scroll";
 import { Loader } from "@/components/loader";
 import {Map} from "@/components/map";
+import { Form } from "@/components/form/form";
 
 export default function Home() {
     const [loading, setLoading] = React.useState(true);
@@ -85,40 +86,14 @@ export default function Home() {
         </ul>
     </section>
 
-    <section className={styles['form-section']}>
-        <h2 id="form-title">Пожалуйста, oтветьте на несколько вопросов</h2>
-        <form className={styles['wedding-form']}>
-            < label id="transfer">Потребуется ли вам трансфер?</label>
-            <label id="before" htmlFor="before">Tолько до торжества</label>
-            <input name="transfer" value="before" id='before' type="radio" />
-            <label id="after" htmlFor="after"> Только после торжества</label>
-                <input name="transfer" value="after" id="after" type="radio" />
-                <label id="yes" htmlFor="yes">До и после торжества</label>
-                <input name="transfer" value="yes" id="yes" type="radio" />
-                <label htmlFor="no-transfer">Нет</label>
-                <input name="transfer" value="no-transfer" type="radio" />
-            <label id="alcohol-label">Какой алкоголь предпочитаете?</label>
-            <input type="text" id="alcohol" name="alcohol" placeholder="e.g. Red wine, beer" />
-            <label id="diet-label">У вас есть какие-то ограничения в еде?</label>
-            <input type="text" id="diet" name="diet" placeholder="вегетарианец, алергия на мороженое" />
-            <label id="child">Будет ли с вами на празднике ребенок?</label>
-            <input type="radio" id="yes" name="child" value='yes' />
-            <label id="yes" htmlFor="yes">Да</label>
-            <input type="radio" id="no" name="child" value='no' />
-            <label id="no" htmlFor="no">Нет</label>
-            <button type="submit" className={styles['submit-btn']} id="submit-btn">Отправить</button>
-        </form>
-    </section>
-
     <div className={styles['buttons']}>
         {/* <a href="#" className={styles['calendar-btn']} id="calendar-btn">Добавить в календарь</a> */}
 
         <ConfettiFireworks/>
         <button type="button">Отклонить приглашение</button>
     </div>
-
-
     <Map/>
+    <Form id={'test'}/>
     <footer className={styles['footer']}>
         <p id="footer-text">&copy; 2025 Wedding of Alexandr & Viktoria. All rights reserved.</p>
     </footer>
