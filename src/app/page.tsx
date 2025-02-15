@@ -24,15 +24,16 @@ export default function Home() {
     const [loading, setLoading] = React.useState(true);
     const [guestName, setGuestName] = React.useState('Дорогие гости');
 
-  const searchParams = new URLSearchParams(window.location.search);
-  const guest = searchParams.get('guest');
 
   useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const guest = searchParams.get("guest");
+
     if (guest) {
       const guestFromUrl = guestsList[`${guest}`];
       setGuestName(guestFromUrl);
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
     setTimeout(() => { setLoading(false) ; }, 2000);
