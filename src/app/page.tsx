@@ -89,14 +89,14 @@ export default function Home() {
         <h2 id="form-title">Пожалуйста, oтветьте на несколько вопросов</h2>
         <form className={styles['wedding-form']}>
             < label id="transfer">Потребуется ли вам трансфер?</label>
-                <input name="transfer" value="before" id='before' type="radio" />
-                <label id="before" htmlFor="before">Tолько до торжества</label>
+            <label id="before" htmlFor="before">Tолько до торжества</label>
+            <input name="transfer" value="before" id='before' type="radio" />
+            <label id="after" htmlFor="after"> Только после торжества</label>
                 <input name="transfer" value="after" id="after" type="radio" />
-                <label id="after" htmlFor="after"> Только после торжества</label>
+                <label id="yes" htmlFor="yes">До и после торжества</label>
                 <input name="transfer" value="yes" id="yes" type="radio" />
-                 <label id="yes" htmlFor="yes">До и после торжества</label>
-                <input name="transfer" value="no" type="radio" />
-                <label htmlFor="no">Нет</label>
+                <label htmlFor="no-transfer">Нет</label>
+                <input name="transfer" value="no-transfer" type="radio" />
             <label id="alcohol-label">Какой алкоголь предпочитаете?</label>
             <input type="text" id="alcohol" name="alcohol" placeholder="e.g. Red wine, beer" />
             <label id="diet-label">У вас есть какие-то ограничения в еде?</label>
@@ -112,7 +112,9 @@ export default function Home() {
 
     <div className={styles['buttons']}>
         {/* <a href="#" className={styles['calendar-btn']} id="calendar-btn">Добавить в календарь</a> */}
+
         <ConfettiFireworks/>
+        <button type="button">Отклонить приглашение</button>
     </div>
 
 
