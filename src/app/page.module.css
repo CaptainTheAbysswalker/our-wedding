@@ -223,6 +223,10 @@ font-family: var(--font-great-vibes);
   font-family: 'Quicksand', sans-serif; /* Body font for footer */
 }
 
+.button-wrapper {
+    
+}
+
 @media screen and (min-width: 852px){
     .overlay {
         left: 0;

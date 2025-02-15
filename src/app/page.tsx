@@ -18,11 +18,12 @@ import { ConfettiFireworks } from "./button";
 import { ScrollProgressDemo } from "@/components/scroll-progress/scroll";
 import { Loader } from "@/components/loader";
 import {Map} from "@/components/map";
-import { Form } from "@/components/form/form";
+import { Modal } from "@/components/modal/modal";
 
 export default function Home() {
     const [loading, setLoading] = React.useState(true);
     const [guestName, setGuestName] = React.useState('Дорогие гости');
+    const [showModal, setShowModal] = React.useState(false);
 
 
   useEffect(() => {
@@ -38,6 +39,15 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => { setLoading(false) ; }, 2000);
   }, [])
+
+  useEffect(() => {
+    document.body.style.overflow = showModal ? 'hidden' : 'auto';
+  }, [showModal]);
+
+  const openModalonBtnClick = () => {
+    setShowModal(true);
+    console.log('click');
+  }
 
 
   return  (
@@ -92,11 +102,12 @@ export default function Home() {
     <div className={styles['buttons']}>
         {/* <a href="#" className={styles['calendar-btn']} id="calendar-btn">Добавить в календарь</a> */}
 
-        <ConfettiFireworks/>
-        <button type="button">Отклонить приглашение</button>
+        <ConfettiFireworks />
+        <div className={styles['button-wrapper']} onClick={openModalonBtnClick}><button type="button">Отклонить приглашение</button></div>
+        
     </div>
     <Map/>
-    <Form />
+   { showModal && <Modal setShowModal={setShowModal} /> }
     <footer className={styles['footer']}>
         <p id="footer-text">&copy; 2025 Wedding of Alexandr & Viktoria. All rights reserved.</p>
     </footer>
