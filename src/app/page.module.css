@@ -43,6 +43,7 @@ font-family: var(--font-great-vibes);
 
 .overlay h1 {
   font-family: 'Great Vibes', cursive; /* Fancy font for names */
+  font-size: 2rem;
 }
 
 .overlay p {
@@ -134,7 +135,6 @@ font-family: var(--font-great-vibes);
 .schedule-list {
   list-style: none;
   font-size: 1.2rem;
-  font-family: 'Quicksand', sans-serif; /* Body font for schedule list */
   color: #333;
   padding: 0;
   text-align: left;
@@ -208,6 +208,10 @@ font-family: var(--font-great-vibes);
 
 .calendar-btn:hover, .accept-btn:hover {
   background-color: #d9b00f;
+}
+
+.details-list li:not(:last-child){
+  margin-bottom: 1rem;
 }
 
 /* Footer */

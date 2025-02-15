@@ -6,7 +6,7 @@ import React, { useEffect } from "react";
 
 import {guestsList} from './guests-list';
 import Image from "next/image";
-import HeroImage from '../../public/images/hero.jpg';
+import HeroImage from '../../public/images/hero4.jpg';
 import Arc from '../../public/icons/arc.gif';
 import Car from '../../public/icons/car.gif';
 import Cheers from '../../public/icons/cheers.gif';
@@ -14,7 +14,6 @@ import Dance from '../../public/icons/dance.gif';
 import Dinner from '../../public/icons/dinner.gif';
 import Cake from '../../public/icons/cake.gif';
 import Finish from '../../public/icons/finish.gif';
-import { useSearchParams } from "next/navigation";
 import { ConfettiFireworks } from "./button";
 import { ScrollProgressDemo } from "@/components/scroll-progress/scroll";
 import { Loader } from "@/components/loader";
@@ -23,14 +22,17 @@ import { Form } from "@/components/form/form";
 
 export default function Home() {
     const [loading, setLoading] = React.useState(true);
-  const searchParams = useSearchParams();
-  const guest = searchParams.get('guest');
-  let guestName = 'Дорогие гости';
+    const [guestName, setGuestName] = React.useState('Дорогие гости');
 
-  if (guest) {
-    const guestFromUrl = guestsList[`${guest}`];
-    guestName = guestFromUrl;
-  }
+  const searchParams = new URLSearchParams(window.location.search);
+  const guest = searchParams.get('guest');
+
+  useEffect(() => {
+    if (guest) {
+      const guestFromUrl = guestsList[`${guest}`];
+      setGuestName(guestFromUrl);
+    }
+  }, [])
 
   useEffect(() => {
     setTimeout(() => { setLoading(false) ; }, 2000);
@@ -93,7 +95,7 @@ export default function Home() {
         <button type="button">Отклонить приглашение</button>
     </div>
     <Map/>
-    <Form id={'test'}/>
+    <Form />
     <footer className={styles['footer']}>
         <p id="footer-text">&copy; 2025 Wedding of Alexandr & Viktoria. All rights reserved.</p>
     </footer>

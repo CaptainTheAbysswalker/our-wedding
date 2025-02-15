@@ -6,13 +6,12 @@ import { LayeredLightPanelless } from "survey-core/themes";
 import { Survey } from "survey-react-ui";
 import model from './helers/formModel.json'
 
-export const Form = ({ id }: { id?: string }) => {
+export const Form = () => {
   const [formModel, setFormModel] = useState({});
 
   useEffect(() => {
     setFormModel(model);
   }, []);
-  console.log(id);
   if (!formModel) {
     return null;
   }
