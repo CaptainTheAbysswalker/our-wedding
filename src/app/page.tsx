@@ -17,7 +17,7 @@ import Finish from "../../public/icons/finish.gif";
 import { ConfettiFireworks } from "./button";
 import { ScrollProgressDemo } from "@/components/scroll-progress/scroll";
 import { Loader } from "@/components/loader";
-import { Map } from "@/components/map";
+// import { Map } from "@/components/map";
 import { Modal } from "@/components/modal/modal";
 
 export default function Home() {
@@ -48,7 +48,7 @@ export default function Home() {
   const openModalonBtnClick = () => {
     setTimeout(() => { setShowModal(true); }, 5000);
   };
-
+  
   return (
     <>
       {loading && <Loader />}
@@ -60,7 +60,7 @@ export default function Home() {
         />
         <div className={styles.hero}>
           <div className={styles["hero-content"]}>
-            <Image src={HeroImage} alt="Aлександр & Виктория" priority fill />
+            <Image src={HeroImage} alt="Aлександр & Виктория" priority />
             <div className={styles.overlay}>
               <h1 id="names">Александр & Виктория</h1>
               <p id="wedding-date">13.09.2025</p>
@@ -74,8 +74,18 @@ export default function Home() {
           <h2 id="greetings-title">{guestName}!</h2>
           <p id="greetings">
             С огромным удовольствием приглашаем Вас на нашу свадьбу, которая
-            состоится 13 сентября 2025 года
+            состоится <br/> 13 сентября 2025 года
           </p>
+        </section>
+        <section>
+        <h2 id="place-title">Место проведения</h2>
+          <p id="place">
+            Мы будем вас ждать по адресу <a href="https://yandex.eu/maps/-/CHqHzMzG" target="blank"> Санкт-Петербург,
+            п.Комарово, Приморское ш., 452А</a>
+          </p>
+          <p>Всех желающих будет ожидать
+              трансфер, который также после праздника совершит обратный маршрут
+              в Санкт-Петербург</p>
         </section>
         <section className={styles["dressCode-section"]}>
           <h2 id="dressCode-title">Dress code</h2>
@@ -91,11 +101,6 @@ export default function Home() {
               Сразу после свадьбы мы улетаем в путешествие, поэтому просим не
               обременять себя выбором цветов, Ваше присутствие скрасит этот день
               ярче любых букетов!
-            </li>
-            <li>
-              Как добраться на наш праздник? Всех желающих будет ожидать
-              трансфер в 15:30, который также в 00:00 совершит обратный маршрут
-              в Санкт-Петербург
             </li>
             <li>
               Не волнуйтесь, если вдруг не с кем оставить малыша. Мы очень рады
@@ -179,17 +184,24 @@ export default function Home() {
           </ul>
         </section>
 
-        <div className={styles["buttons"]}>
-          <div
-            className={styles["button-wrapper"]}
-            onClick={openModalonBtnClick}
-          >
-            <ConfettiFireworks />
+        <section>
+          <h2 id="approve-title">Подтверждение</h2>
+          <p id="approve">
+            Пожалуйста подтведите свое присутствие до 01 июля 2025
+          </p>
+          <div className={styles["buttons"]}>
+            <div
+              className={styles["button-wrapper"]}
+              onClick={openModalonBtnClick}
+            >
+              <ConfettiFireworks />
+            </div>
+            <button type="button">Отклонить приглашение</button>
           </div>
-          <button type="button">Отклонить приглашение</button>
-        </div>
-        <Map />
-        {showModal && <Modal setShowModal={setShowModal} guest={guestName}/>}
+        </section>
+
+        {/* <Map /> */}
+        {showModal && <Modal setShowModal={setShowModal} guest={guestName} />}
         <footer className={styles["footer"]}>
           <p id="footer-text">
             &copy; 2025 Wedding of Alexandr & Viktoria. All rights reserved.
