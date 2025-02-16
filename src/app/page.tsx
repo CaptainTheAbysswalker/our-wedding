@@ -8,7 +8,7 @@ import { guestsList } from "./guests-list";
 import Image from "next/image";
 import HeroImage from "../../public/images/hero4.jpg";
 import Arc from "../../public/icons/arc.gif";
-import Car from "../../public/icons/car.gif";
+// import Car from "../../public/icons/car.gif";
 import Cheers from "../../public/icons/cheers.gif";
 import Dance from "../../public/icons/dance.gif";
 import Dinner from "../../public/icons/dinner.gif";
@@ -19,11 +19,16 @@ import { ScrollProgressDemo } from "@/components/scroll-progress/scroll";
 import { Loader } from "@/components/loader";
 // import { Map } from "@/components/map";
 import { Modal } from "@/components/modal/modal";
+import { Divider } from "@/components/divider/divider";
 
 export default function Home() {
   const [loading, setLoading] = React.useState(true);
   const [guestName, setGuestName] = React.useState("Дорогие гости");
   const [showModal, setShowModal] = React.useState(false);
+  const [approved, setApproved] = React.useState(false);
+  const [rejected, setRejeced] = React.useState(false);
+
+  const text =  approved ? 'Мы очень рады, что вы разделите этот счастливый день с нами. Увидимся на нашей свадьбе!' : 'Очень жаль, что вы не сможете разделить этот счастливый день с нами. ';
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -46,9 +51,12 @@ export default function Home() {
   }, [showModal]);
 
   const openModalonBtnClick = () => {
+    setApproved(true);
     setTimeout(() => { setShowModal(true); }, 5000);
   };
-  
+
+  const rejectedBtnClick = () => { setRejeced(true); };
+
   return (
     <>
       {loading && <Loader />}
@@ -63,7 +71,7 @@ export default function Home() {
             <Image src={HeroImage} alt="Aлександр & Виктория" priority />
             <div className={styles.overlay}>
               <h1 id="names">Александр & Виктория</h1>
-              <p id="wedding-date">13.09.2025</p>
+              <p>13.09.2025</p>
               <p id="quote" className={styles.quote}>
                 Together forever
               </p>
@@ -74,13 +82,13 @@ export default function Home() {
           <h2 id="greetings-title">{guestName}!</h2>
           <p id="greetings">
             С огромным удовольствием приглашаем Вас на нашу свадьбу, которая
-            состоится <br/> 13 сентября 2025 года
+            состоится <br/> <span id="wedding-date">13 сентября 2025 года</span>
           </p>
         </section>
         <section>
         <h2 id="place-title">Место проведения</h2>
           <p id="place">
-            Мы будем вас ждать по адресу <a href="https://yandex.eu/maps/-/CHqHzMzG" target="blank"> Санкт-Петербург,
+            Мы будем вас ждать по адресу <br/> <a href="https://yandex.eu/maps/-/CHqHzMzG" target="blank"> Санкт-Петербург,
             п.Комарово, Приморское ш., 452А</a>
           </p>
           <p>Всех желающих будет ожидать
@@ -102,12 +110,14 @@ export default function Home() {
               обременять себя выбором цветов, Ваше присутствие скрасит этот день
               ярче любых букетов!
             </li>
+            <Divider />
             <li>
               Не волнуйтесь, если вдруг не с кем оставить малыша. Мы очень рады
               видеть на своем празднике всю Вашу семью. На нашем празднике будет
               организован досуг для детей. Взрослые могут спокойно насладиться
               праздником.
             </li>
+            <Divider />
             <li>
               Если вы подготовили для нас сюрприз или творческий подарок, не
               забудьте предупредить нашy ведущyю. Она поможет воплотить вашу
@@ -118,7 +128,7 @@ export default function Home() {
         <section className={styles["schedule-section"]}>
           <h2 id="schedule-title">Свадебное расписание</h2>
           <ul className={styles["schedule-list"]}>
-            <li>
+            {/* <li>
               <Image
                 src={Car}
                 alt="car"
@@ -126,7 +136,7 @@ export default function Home() {
                 unoptimized
               />
               <strong>15:30</strong>- Трансфер
-            </li>
+            </li> */}
             <li>
               <Image
                 src={Cheers}
@@ -184,7 +194,7 @@ export default function Home() {
           </ul>
         </section>
 
-        <section>
+        {(!approved && !rejected) && <section>
           <h2 id="approve-title">Подтверждение</h2>
           <p id="approve">
             Пожалуйста подтведите свое присутствие до 01 июля 2025
@@ -196,9 +206,13 @@ export default function Home() {
             >
               <ConfettiFireworks />
             </div>
-            <button type="button">Отклонить приглашение</button>
+            <button type="button" onClick={rejectedBtnClick}>Отклонить приглашение</button>
           </div>
-        </section>
+        </section>}
+
+        {(approved || rejected) && <section>
+            <p>{text}</p>
+        </section>}
 
         {/* <Map /> */}
         {showModal && <Modal setShowModal={setShowModal} guest={guestName} />}

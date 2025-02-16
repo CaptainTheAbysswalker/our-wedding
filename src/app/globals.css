@@ -36,10 +36,10 @@ body {
   margin: 0;
 }
 
-a {
+a, #wedding-date {
   color: inherit;
   text-decoration: none;
-  background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
+  background: linear-gradient(to right, red, orange, rgb(185, 185, 5), green, rgb(4, 169, 169), blue, violet);
   background-size: 400% 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
