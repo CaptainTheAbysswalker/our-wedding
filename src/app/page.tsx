@@ -46,8 +46,7 @@ export default function Home() {
   }, [showModal]);
 
   const openModalonBtnClick = () => {
-    setShowModal(true);
-    console.log("click");
+    setTimeout(() => { setShowModal(true); }, 5000);
   };
 
   return (
@@ -181,15 +180,13 @@ export default function Home() {
         </section>
 
         <div className={styles["buttons"]}>
-          {/* <a href="#" className={styles['calendar-btn']} id="calendar-btn">Добавить в календарь</a> */}
-
-          <ConfettiFireworks />
           <div
             className={styles["button-wrapper"]}
             onClick={openModalonBtnClick}
           >
-            <button type="button">Отклонить приглашение</button>
+            <ConfettiFireworks />
           </div>
+          <button type="button">Отклонить приглашение</button>
         </div>
         <Map />
         {showModal && <Modal setShowModal={setShowModal} guest={guestName}/>}

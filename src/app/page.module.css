@@ -18,7 +18,7 @@
 .hero {
 font-family: var(--font-great-vibes);
   position: relative;
-  height: 100vh;
+  height: 100dvh;
   background-color: #000;
   width: 100vw;
   /* background-image: url('../../public/images/hero.jpg');
