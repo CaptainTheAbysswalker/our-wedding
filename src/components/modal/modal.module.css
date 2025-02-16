@@ -46,10 +46,10 @@
 @media screen and (max-width: 768px){
     .modal {
         align-items: end;
-    };
+    }
     .modal-content {
         border-radius: 16px 16px 0 0;
         width: 100%;
         height: 95%;
-    };
+    }
 }
