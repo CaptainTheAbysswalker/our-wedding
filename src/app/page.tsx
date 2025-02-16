@@ -197,7 +197,7 @@ export default function Home() {
         {(!approved && !rejected) && <section>
           <h2 id="approve-title">Подтверждение</h2>
           <p id="approve">
-            Пожалуйста подтведите свое присутствие до 01 июля 2025
+            Пожалуйста подтведите свое присутствие до 01&nbsp;июля&nbsp;2025
           </p>
           <div className={styles["buttons"]}>
             <div
