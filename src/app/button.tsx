@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { ShinyButton } from "@/components/magicui/shiny-button";
 import confetti from "canvas-confetti";
 
 
@@ -36,7 +36,7 @@ export function ConfettiFireworks() {
 
   return (
     <div className="relative">
-      <Button onClick={handleClick}>Принять приглашение</Button>
+      <ShinyButton onClick={handleClick}>Принять приглашение</ShinyButton>
     </div>
   );
 }

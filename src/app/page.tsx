@@ -30,7 +30,9 @@ export default function Home() {
   const [approved, setApproved] = React.useState(false);
   const [rejected, setRejeced] = React.useState(false);
 
-  const text =  approved ? 'Мы очень рады, что вы разделите этот счастливый день с нами. Увидимся на нашей свадьбе!' : 'Очень жаль, что вы не сможете разделить этот счастливый день с нами. ';
+  const text = approved
+    ? "Мы очень рады, что вы разделите этот счастливый день с нами. Увидимся на нашей свадьбе!"
+    : "Очень жаль, что вы не сможете разделить этот счастливый день с нами. ";
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -43,7 +45,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    pasteImage()
+    pasteImage();
     setTimeout(() => {
       setLoading(false);
     }, 2000);
@@ -55,10 +57,14 @@ export default function Home() {
 
   const openModalonBtnClick = () => {
     setApproved(true);
-    setTimeout(() => { setShowModal(true); }, 5000);
+    setTimeout(() => {
+      setShowModal(true);
+    }, 5000);
   };
 
-  const rejectedBtnClick = () => { setRejeced(true); };
+  const rejectedBtnClick = () => {
+    setRejeced(true);
+  };
 
   return (
     <>
@@ -85,18 +91,23 @@ export default function Home() {
           <h2 id="greetings-title">{guestName}!</h2>
           <p id="greetings">
             С огромным удовольствием приглашаем Вас на нашу свадьбу, которая
-            состоится <br/> <span id="wedding-date">13 сентября 2025 года</span>
+            состоится <br />{" "}
+            <span id="wedding-date">13 сентября 2025 года</span>
           </p>
         </section>
         <section>
-        <h2 id="place-title">Место проведения</h2>
+          <h2 id="place-title">Место проведения</h2>
           <p id="place">
-            Мы будем вас ждать по адресу <br/> <a href="https://yandex.eu/maps/-/CHqHzMzG" target="_blank"> Санкт-Петербург,
-            п.Комарово, Приморское ш., 452А</a>
+            Мы будем вас ждать по адресу <br />{" "}
+            <a href="https://yandex.eu/maps/-/CHqHzMzG" target="_blank">
+              {" "}
+              Санкт-Петербург, п.Комарово, Приморское ш., 452А
+            </a>
           </p>
-          <p>Всех желающих будет ожидать
-              трансфер, который также после праздника совершит обратный маршрут
-              в Санкт-Петербург</p>
+          <p>
+            Всех желающих будет ожидать трансфер, который также после праздника
+            совершит обратный маршрут в Санкт-Петербург
+          </p>
         </section>
         <section className={styles["dressCode-section"]}>
           <h2 id="dressCode-title">Dress code</h2>
@@ -123,10 +134,17 @@ export default function Home() {
             <Divider />
             <li>
               Если вы подготовили для нас сюрприз или творческий подарок, не
-              забудьте предупредить нашy ведущyю Алину. Она поможет воплотить вашу
-              идею или отговорит вас, и ответит на все вопросы.
+              забудьте предупредить нашy ведущyю Алину. Она поможет воплотить
+              вашу идею или отговорит вас, и ответит на все вопросы.
             </li>
-            <div className={styles["host-info"]}><a href="https://t.me/alinaveduspb" target="_blank"><Image src={HostFoto} alt="alina" className={styles["host-image"]}/></a>
+            <div className={styles["host-info"]}>
+              <a href="https://t.me/alinaveduspb" target="_blank">
+                <Image
+                  src={HostFoto}
+                  alt="alina"
+                  className={styles["host-image"]}
+                />
+              </a>
             </div>
           </ul>
         </section>
@@ -199,25 +217,31 @@ export default function Home() {
           </ul>
         </section>
 
-        {(!approved && !rejected) && <section>
-          <h2 id="approve-title">Подтверждение</h2>
-          <p id="approve">
-            Пожалуйста подтведите свое присутствие до 01&nbsp;июля&nbsp;2025
-          </p>
-          <div className={styles["buttons"]}>
-            <div
-              className={styles["button-wrapper"]}
-              onClick={openModalonBtnClick}
-            >
-              <ConfettiFireworks />
+        {!approved && !rejected && (
+          <section>
+            <h2 id="approve-title">Подтверждение</h2>
+            <p id="approve">
+              Пожалуйста подтведите свое присутствие до 01&nbsp;июля&nbsp;2025
+            </p>
+            <div className={styles["buttons"]}>
+              <div
+                className={styles["button-wrapper"]}
+                onClick={openModalonBtnClick}
+              >
+                <ConfettiFireworks />
+              </div>
+              <button type="button" onClick={rejectedBtnClick}>
+                Отклонить приглашение
+              </button>
             </div>
-            <button type="button" onClick={rejectedBtnClick}>Отклонить приглашение</button>
-          </div>
-        </section>}
+          </section>
+        )}
 
-        {(approved || rejected) && <section>
+        {(approved || rejected) && (
+          <section>
             <p>{text}</p>
-        </section>}
+          </section>
+        )}
 
         {/* <Map /> */}
         {showModal && <Modal setShowModal={setShowModal} guest={guestName} />}

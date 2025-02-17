@@ -52,28 +52,6 @@ font-family: var(--font-great-vibes);
   font-size: 1.2rem;
 }
 
-/* Language Selector */
-.language-selector {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-}
-
-.language-selector button {
-  background-color: #f1c40f;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-.language-selector button:hover {
-  background-color: #d9b00f;
-}
-
 /* Greeting Section */
 
 .greeting-section h2 {
@@ -110,7 +88,7 @@ font-family: var(--font-great-vibes);
   background-color: #f1c40f;
   color: white;
   padding: 15px 30px;
-  border: none;
+  /* border: none; */
   border-radius: 5px;
   cursor: pointer;
   font-size: 1.1rem;
@@ -185,6 +163,7 @@ font-family: var(--font-great-vibes);
 /* Buttons Section */
 .buttons {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 30px;
   padding: 40px;
@@ -194,7 +173,7 @@ font-family: var(--font-great-vibes);
   background-color: #f1c40f;
   color: white;
   padding: 15px 30px;
-  border: none;
+  /* border: none; */
   border-radius: 5px;
   text-decoration: none;
   font-size: 1.2rem;
