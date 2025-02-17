@@ -224,6 +224,18 @@ font-family: var(--font-great-vibes);
     
 }
 
+.host-info{
+    display: flex;
+    justify-content: center;
+}
+
+.host-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 @media screen and (min-width: 852px){
     .overlay {
         left: 0;

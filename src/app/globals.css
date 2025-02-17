@@ -72,7 +72,7 @@ h2 {
     font-family: var(--font-great-vibes);
     font-size: 2.6rem;
     line-height: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 @media (prefers-color-scheme: dark) {

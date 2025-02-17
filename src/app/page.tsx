@@ -7,6 +7,7 @@ import React, { useEffect } from "react";
 import { guestsList } from "./guests-list";
 import Image from "next/image";
 import HeroImage from "../../public/images/hero4.jpg";
+import HostFoto from "../../public/images/alina.jpeg";
 import Arc from "../../public/icons/arc.gif";
 // import Car from "../../public/icons/car.gif";
 import Cheers from "../../public/icons/cheers.gif";
@@ -90,7 +91,7 @@ export default function Home() {
         <section>
         <h2 id="place-title">Место проведения</h2>
           <p id="place">
-            Мы будем вас ждать по адресу <br/> <a href="https://yandex.eu/maps/-/CHqHzMzG" target="blank"> Санкт-Петербург,
+            Мы будем вас ждать по адресу <br/> <a href="https://yandex.eu/maps/-/CHqHzMzG" target="_blank"> Санкт-Петербург,
             п.Комарово, Приморское ш., 452А</a>
           </p>
           <p>Всех желающих будет ожидать
@@ -122,9 +123,11 @@ export default function Home() {
             <Divider />
             <li>
               Если вы подготовили для нас сюрприз или творческий подарок, не
-              забудьте предупредить нашy ведущyю. Она поможет воплотить вашу
+              забудьте предупредить нашy ведущyю Алину. Она поможет воплотить вашу
               идею или отговорит вас, и ответит на все вопросы.
             </li>
+            <div className={styles["host-info"]}><a href="https://t.me/alinaveduspb" target="_blank"><Image src={HostFoto} alt="alina" className={styles["host-image"]}/></a>
+            </div>
           </ul>
         </section>
         <section className={styles["schedule-section"]}>
