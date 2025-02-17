@@ -20,6 +20,7 @@ import { Loader } from "@/components/loader";
 // import { Map } from "@/components/map";
 import { Modal } from "@/components/modal/modal";
 import { Divider } from "@/components/divider/divider";
+import { pasteImage } from "@/lib/pastImage";
 
 export default function Home() {
   const [loading, setLoading] = React.useState(true);
@@ -41,6 +42,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    pasteImage()
     setTimeout(() => {
       setLoading(false);
     }, 2000);
