@@ -33,8 +33,12 @@ font-family: var(--font-great-vibes);
 
 .overlay {
   position: absolute;
-  bottom: 2rem;
+  bottom: 0;
   left: 50%;
+  transform: translateX(-50%);
+  backdrop-filter: blur(5px);
+  width: 100%;
+  padding-bottom: 1rem;
   z-index: 1;
 }
 
@@ -222,8 +226,7 @@ font-family: var(--font-great-vibes);
 
 @media screen and (min-width: 852px){
     .overlay {
-        left: 0;
-        right: 2rem;
+
     };
     .overlay h1 {
         font-size: 4rem;

@@ -6,7 +6,7 @@ import React, { useEffect } from "react";
 
 import { guestsList } from "./guests-list";
 import Image from "next/image";
-import HeroImage from "../../public/images/hero.jpg";
+import HeroImage from "../../public/images/hero14.jpg";
 import HostFoto from "../../public/images/alina.jpeg";
 import Arc from "../../public/icons/arc.gif";
 // import Car from "../../public/icons/car.gif";
