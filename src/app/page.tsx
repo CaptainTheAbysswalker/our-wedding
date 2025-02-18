@@ -6,7 +6,7 @@ import React, { useEffect } from "react";
 
 import { guestsList } from "./guests-list";
 import Image from "next/image";
-import HeroImage from "../../public/images/hero4.jpg";
+import HeroImage from "../../public/images/hero.jpg";
 import HostFoto from "../../public/images/alina.jpeg";
 import Arc from "../../public/icons/arc.gif";
 // import Car from "../../public/icons/car.gif";
@@ -220,7 +220,7 @@ export default function Home() {
         {!approved && !rejected && (
           <section>
             <h2 id="approve-title">Подтверждение</h2>
-            <p id="approve">
+            <p id="approve" className={styles["approve-text"]}>
               Пожалуйста подтведите свое присутствие до 01&nbsp;июля&nbsp;2025
             </p>
             <div className={styles["buttons"]}>
@@ -231,7 +231,7 @@ export default function Home() {
                 <ConfettiFireworks />
               </div>
               <button type="button" onClick={rejectedBtnClick}>
-                Отклонить приглашение
+                Отклонить 
               </button>
             </div>
           </section>

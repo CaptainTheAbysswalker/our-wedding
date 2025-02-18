@@ -154,3 +154,7 @@ h2 {
 .sv-string-viewer--multiline, .sd-item__control-label > .sv-string-viewer {
     font-family: var(--font-cormorant-infant);
 }
+
+.p-4 {
+    padding: 0;
+}
