@@ -67,19 +67,11 @@
           "title": "У вас есть какие-то ограничения в еде?"
         },
         {
-          "type": "radiogroup",
+          "type": "boolean",
           "name": "withChild",
           "title": "Будет ли с вами на празднике ребенок?",
-          "choices": [
-            {
-              "value": "Да",
-              "text": "Да"
-            },
-            {
-              "value": "Нет",
-              "text": "Нет"
-            }
-          ]
+          "labelTrue": "Да",
+          "labelFalse": "Нет"
         }
       ]
     }

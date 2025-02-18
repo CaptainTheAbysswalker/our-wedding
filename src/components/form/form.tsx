@@ -34,8 +34,8 @@ export const Form = ({
         message += `%0AОграничения в еде: ${data["restrictions"]}`;
       }
 
-      if (data["withChild"]) {
-        message += `%0AС детьми: ${data["withChild"]}`;
+      if (data["withChild"] || data["withChild"] === false) {
+        message += `%0AС детьми: ${data["withChild"] ? 'Да' : 'Нет'}`;
       }
 
       await sendMessage(message);
