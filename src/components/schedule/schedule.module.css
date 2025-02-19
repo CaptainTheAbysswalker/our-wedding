@@ -1,0 +1,31 @@
+/* Schedule Section */
+
+.schedule-list {
+    list-style: none;
+    font-size: 1.2rem;
+    color: #333;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .schedule-list li {
+    margin-bottom: 20px;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+  }
+  
+  .schedule-list li:last-child{
+      margin-bottom: 0;
+  }
+  
+  .schedule-list strong {
+    color: #f1c40f;
+    margin-right: 0.5rem;
+  }
+  
+  .icons {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+}

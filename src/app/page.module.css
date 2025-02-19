@@ -7,67 +7,8 @@
   grid-row-start: 2;
 }
 
-.icons {
-    width: 2rem;
-    height: 2rem;
-    margin-right: 1rem;
-}
-
-/* Hero Section */
-
-.hero {
-font-family: var(--font-great-vibes);
-  position: relative;
-  height: 100dvh;
-  width: 100vw;
-  color: white;
-  text-align: center;
-}
-
-.hero-content img {
-    object-fit: cover;
-  object-position: center;
-  height: 100dvh;
-  /* object-position: 50% 20%; */
-}
-
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  backdrop-filter: blur(5px);
-  width: 100%;
-  padding-bottom: 1rem;
-  z-index: 1;
-}
-
-.overlay h1 {
-  font-family: 'Great Vibes', cursive; /* Fancy font for names */
-  font-size: 2rem;
-}
-
-.overlay p {
-  font-size: 1.5rem;
-}
-
-.quote {
-  font-style: italic;
-  font-size: 1.2rem;
-}
-
-/* Greeting Section */
-
-.greeting-section h2 {
-}
 
 /* Form Section */
-.form-section {
-
-}
-
-.form-section h2 {
-}
 
 .wedding-form {
   display: grid;
@@ -103,42 +44,7 @@ font-family: var(--font-great-vibes);
   background-color: #d9b00f;
 }
 
-/* Schedule Section */
-.schedule-section {
-}
-
-.schedule-section h2 {
-  
-}
-
-.schedule-list {
-  list-style: none;
-  font-size: 1.2rem;
-  color: #333;
-  padding: 0;
-  text-align: left;
-}
-
-.schedule-list li {
-  margin-bottom: 20px;
-  line-height: normal;
-  display: flex;
-  align-items: center;
-}
-
-.schedule-list li:last-child{
-    margin-bottom: 0;
-}
-
-.schedule-list strong {
-  color: #f1c40f;
-  margin-right: 0.5rem;
-}
-
 /* Invitation Text Section */
-.invitation-text, .dressCode-section {
-
-}
 
 .invitation-text h2 {
   font-size: 2rem;
@@ -193,43 +99,5 @@ font-family: var(--font-great-vibes);
   background-color: #d9b00f;
 }
 
-.details-list li:not(:last-child){
-  margin-bottom: 1rem;
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #333;
-  color: white;
-  font-family: 'Quicksand', sans-serif; /* Body font for footer */
-  line-height: normal;
-  font-size: small;
-}
-
-.button-wrapper {
-    
-}
-
-.host-info{
-    display: flex;
-    justify-content: center;
-}
-
-.host-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
 @media screen and (min-width: 852px){
-    .overlay {
-
-    };
-    .overlay h1 {
-        font-size: 4rem;
-        transform: none;
-      }
 }

@@ -1,0 +1,54 @@
+/* Hero Section */
+
+.hero {
+    font-family: var(--font-great-vibes);
+      position: relative;
+      height: 100dvh;
+      width: 100vw;
+      color: white;
+      text-align: center;
+    }
+    
+    .hero-content img {
+        object-fit: cover;
+      object-position: center;
+      height: 100dvh;
+    }
+    
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      /* backdrop-filter: blur(5px); */
+      width: 100%;
+      text-shadow:
+       -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+         1px 1px 0 #000;
+      padding-bottom: 1rem;
+      z-index: 1;
+    }
+    
+    .overlay h1 {
+      font-family: 'Great Vibes', cursive; /* Fancy font for names */
+      font-size: 2rem;
+    }
+    
+    .overlay p {
+      font-size: 1.5rem;
+    }
+
+    .quote {
+        font-style: italic;
+        font-size: 1.2rem;
+      }
+
+      @media screen and (min-width: 852px){
+        .overlay h1 {
+            font-size: 4rem;
+            transform: none;
+          }
+    }
+    
