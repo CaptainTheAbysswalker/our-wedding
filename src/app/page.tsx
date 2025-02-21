@@ -65,10 +65,6 @@ export default function Home() {
       {loading && <Loader />}
       <ScrollProgressDemo />
       <main className={styles.main}>
-        <Script
-          src={`https://api-maps.yandex.ru/v3/?apikey=${process.env.NEXT_PUBLIC_YANDEX_API_KEY}&lang=ru_RU`}
-          strategy="beforeInteractive"
-        />
         <Hero/>
         <Greetings guestName={guestName}/>
         <Place/>
@@ -102,8 +98,6 @@ export default function Home() {
         )}
         <ApprovedOrRejected approved={approved} rejected={rejected}/>
         </InView>
-
-        {/* <Map /> */}
         {showModal && <Modal setShowModal={setShowModal} guest={guestName} />}
         <Footer/>
       </main>
