@@ -16,6 +16,10 @@ import { Details } from "@/components/details";
 import { Shedule } from "@/components/schedule";
 import { Footer } from "@/components/footer";
 import { ApprovedOrRejected } from "@/components/approve";
+import { InView } from "@/components/ui/in-view";
+import { DressCode } from "@/components/dressCode";
+import { Place } from "@/components/place";
+import { Greetings } from "@/components/greetings";
 
 export default function Home() {
   const [loading, setLoading] = React.useState(true);
@@ -66,37 +70,16 @@ export default function Home() {
           strategy="beforeInteractive"
         />
         <Hero/>
-        <section className={styles["greeting-section"]}>
-          <h2 id="greetings-title">{guestName}!</h2>
-          <p id="greetings">
-            С огромным удовольствием приглашаем Вас на нашу свадьбу, которая
-            состоится <br />{" "}
-            <span id="wedding-date">13 сентября 2025 года</span>
-          </p>
-        </section>
-        <section>
-          <h2 id="place-title">Место проведения</h2>
-          <p id="place">
-            Мы будем вас ждать по адресу <br />{" "}
-            <a href="https://yandex.eu/maps/-/CHqHzMzG" target="_blank">
-              {" "}
-              Санкт-Петербург, п.Комарово, Приморское ш., 452А
-            </a>
-          </p>
-          <p>
-            Всех желающих будет ожидать трансфер, который также после праздника
-            совершит обратный маршрут в Санкт-Петербург
-          </p>
-        </section>
-        <section className={styles["dressCode-section"]}>
-          <h2 id="dressCode-title">Dress code</h2>
-          <p id="dressCode">
-            Надевайте всё самое нарядное и красивое и обязательно берите с собой
-            хорошее настроение!
-          </p>
-        </section>
+        <Greetings guestName={guestName}/>
+        <Place/>
+        <DressCode/>
         <Details/>
         <Shedule/>
+
+        <InView variants={{
+            hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
+            visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+          }}>
 
         {!approved && !rejected && (
           <section>
@@ -117,8 +100,8 @@ export default function Home() {
             </div>
           </section>
         )}
-
         <ApprovedOrRejected approved={approved} rejected={rejected}/>
+        </InView>
 
         {/* <Map /> */}
         {showModal && <Modal setShowModal={setShowModal} guest={guestName} />}

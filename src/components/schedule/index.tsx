@@ -9,9 +9,14 @@ import Dinner from "../../../public/icons/dinner.gif";
 import Cake from "../../../public/icons/cake.gif";
 import Dance from "../../../public/icons/dance.gif";
 import Finish from "../../../public/icons/finish.gif";
+import { InView } from "../ui/in-view";
 
 export const Shedule = () => {
     return (
+        <InView variants={{
+                    hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
+                    visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+                  }}>
         <section className={styles["schedule-section"]}>
           <h2 id="schedule-title">Свадебное расписание</h2>
           <ul className={styles["schedule-list"]}>
@@ -80,6 +85,7 @@ export const Shedule = () => {
             </li>
           </ul>
         </section>
+        </InView>
     )
 
 }
