@@ -21,7 +21,6 @@ import { Place } from "@/components/place";
 import { Greetings } from "@/components/greetings";
 
 export default function Home() {
-  const [loading, setLoading] = React.useState(true);
   const [guestName, setGuestName] = React.useState("Дорогие гости");
   const [showModal, setShowModal] = React.useState(false);
   const [approved, setApproved] = React.useState(false);
@@ -39,9 +38,6 @@ export default function Home() {
 
   useEffect(() => {
     pasteImage();
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
   }, []);
 
   useEffect(() => {
@@ -61,7 +57,7 @@ export default function Home() {
 
   return (
     <>
-      {loading && <Loader />}
+      <Loader />
       <ScrollProgressDemo />
       <main className={styles.main}>
         <Hero/>
