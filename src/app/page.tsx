@@ -40,11 +40,20 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    const lsApproved = localStorage.getItem("approved");
+    const lsRejected = localStorage.getItem("rejected");
+
+    setApproved(Boolean(lsApproved));
+    setRejeced(Boolean(lsRejected));
+  }, []);
+
+  useEffect(() => {
     document.body.style.overflow = showModal ? "hidden" : "auto";
   }, [showModal]);
 
   const openModalonBtnClick = () => {
     setApproved(true);
+    localStorage.setItem("approved", "true");
     setTimeout(() => {
       setShowModal(true);
     }, 5000);
@@ -52,6 +61,7 @@ export default function Home() {
 
   const rejectedBtnClick = () => {
     setRejeced(true);
+    localStorage.setItem("rejected", "true");
   };
 
   return (
@@ -59,12 +69,12 @@ export default function Home() {
       <Loader />
       <ScrollProgressDemo />
       <main className={styles.main}>
-        <Hero/>
-        <Greetings guestName={guestName}/>
-        <Place/>
-        <DressCode/>
-        <Details/>
-        <Shedule/>
+        <Hero />
+        <Greetings guestName={guestName} />
+        <Place />
+        <DressCode />
+        <Details />
+        <Shedule />
 
         {!approved && !rejected && (
           <section>
@@ -85,9 +95,9 @@ export default function Home() {
             </div>
           </section>
         )}
-        <ApprovedOrRejected approved={approved} rejected={rejected}/>
+        <ApprovedOrRejected approved={approved} rejected={rejected} />
         {showModal && <Modal setShowModal={setShowModal} guest={guestName} />}
-        <Footer/>
+        <Footer />
       </main>
     </>
   );
