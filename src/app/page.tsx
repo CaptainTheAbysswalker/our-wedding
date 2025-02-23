@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "./page.module.css";
-import Script from "next/script";
 import React, { useEffect } from "react";
 
 import { guestsList } from "./guests-list";
