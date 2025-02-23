@@ -15,7 +15,6 @@ import { Details } from "@/components/details";
 import { Shedule } from "@/components/schedule";
 import { Footer } from "@/components/footer";
 import { ApprovedOrRejected } from "@/components/approve";
-import { InView } from "@/components/ui/in-view";
 import { DressCode } from "@/components/dressCode";
 import { Place } from "@/components/place";
 import { Greetings } from "@/components/greetings";
@@ -67,11 +66,6 @@ export default function Home() {
         <Details/>
         <Shedule/>
 
-        <InView variants={{
-            hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
-            visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
-          }}>
-
         {!approved && !rejected && (
           <section>
             <h2 id="approve-title">Подтверждение</h2>
@@ -92,7 +86,6 @@ export default function Home() {
           </section>
         )}
         <ApprovedOrRejected approved={approved} rejected={rejected}/>
-        </InView>
         {showModal && <Modal setShowModal={setShowModal} guest={guestName} />}
         <Footer/>
       </main>

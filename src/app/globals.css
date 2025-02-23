@@ -1,4 +1,6 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
 @import 'survey-core/defaultV2.min.css';
 
 * {
@@ -172,7 +174,6 @@ h2 {
     opacity 1s,
     display 1s allow-discrete;
   }
-
 
   #hide {
     display: none;
