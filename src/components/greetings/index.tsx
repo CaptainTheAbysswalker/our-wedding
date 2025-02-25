@@ -5,7 +5,7 @@ export const Greetings = ({guestName}: {guestName: string}) => {
     return (
     <section>
       <h2 id="greetings-title">{guestName}!</h2>
-      <TextAnimate animation="blurIn" once>
+      <TextAnimate animation="blurIn">
         С огромным удовольствием приглашаем Вас на нашу свадьбу, которая
         состоится
       </TextAnimate>

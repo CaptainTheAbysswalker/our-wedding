@@ -14,7 +14,7 @@ export const Details = () => {
         <h2 id="details-title">Детали</h2>
         <ul className={styles["details-list"]}>
           <li>
-            <TextAnimate animation="blurIn" once>
+            <TextAnimate animation="blurIn">
             Сразу после свадьбы мы улетаем в путешествие, поэтому просим не
             обременять себя выбором цветов, Ваше присутствие скрасит этот день
             ярче любых букетов!
@@ -22,7 +22,7 @@ export const Details = () => {
           </li>
           <Divider />
           <li>
-            <TextAnimate animation="blurIn" once>
+            <TextAnimate animation="blurIn">
             Не волнуйтесь, если вдруг не с кем оставить малыша. Мы очень рады
             видеть на своем празднике всю Вашу семью. На нашем празднике будет
             организован досуг для детей. Взрослые могут спокойно насладиться
@@ -31,7 +31,7 @@ export const Details = () => {
           </li>
           <Divider />
           <li>
-            <TextAnimate animation="blurIn" once>
+            <TextAnimate animation="blurIn">
             Если вы подготовили для нас сюрприз или творческий подарок, не
             забудьте предупредить нашy ведущyю Алину. Она поможет воплотить
             вашу идею или отговорит вас, и ответит на все вопросы.

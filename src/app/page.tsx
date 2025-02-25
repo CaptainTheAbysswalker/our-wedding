@@ -65,6 +65,13 @@ export default function Home() {
     localStorage.setItem("rejected", "true");
   };
 
+  const changeDecision = ()=> {
+    localStorage.removeItem("approved");
+    localStorage.removeItem("rejected");
+    setApproved(false);
+    setRejeced(false);
+  }
+
   return (
     <>
       <Loader />
@@ -80,14 +87,12 @@ export default function Home() {
         {!approved && !rejected && (
           <section>
             <h2 id="approve-title">Подтверждение</h2>
-            <TextAnimate animation="blurIn" className={styles["approve-text"]} once>
-              Пожалуйста подтведите свое присутствие до 01&nbsp;июля&nbsp;2025
+            <TextAnimate animation="blurIn">
+              Пожалуйста подтведите свое присутствие
             </TextAnimate>
+            <TextAnimate animation="blurIn" className={"approve-text"}>до 01&nbsp;июля&nbsp;2025</TextAnimate>
             <div className={styles["buttons"]}>
-              <div
-                className={styles["button-wrapper"]}
-                onClick={openModalonBtnClick}
-              >
+              <div onClick={openModalonBtnClick}>
                 <ConfettiFireworks />
               </div>
               <button type="button" onClick={rejectedBtnClick}>
@@ -96,7 +101,7 @@ export default function Home() {
             </div>
           </section>
         )}
-        <ApprovedOrRejected approved={approved} rejected={rejected} />
+        <ApprovedOrRejected approved={approved} rejected={rejected} changeDecision={changeDecision}/>
         {showModal && <Modal setShowModal={setShowModal} guest={guestName} />}
         <Footer />
       </main>

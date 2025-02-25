@@ -167,6 +167,33 @@ h2 {
     user-select: auto;
 }
 
+.approve-text{
+    margin-bottom: 1.5rem;
+}
+
+.heart{
+    display: flex;
+    justify-content: center;
+
+}
+
+.heart img {
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+
 .loader {
     opacity: 1;
     display: block;

@@ -311,7 +311,7 @@ export function TextAnimate({
   segmentClassName,
   as: Component = "p",
   startOnView = true,
-  once = false,
+  once = true,
   by = "word",
   animation = "fadeIn",
   ...props

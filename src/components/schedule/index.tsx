@@ -32,7 +32,7 @@ export const Shedule = () => {
                 className={styles["icons"]}
                 unoptimized
               />
-              <strong>16:00</strong> <TextAnimate animation="blurIn" once>- Сбор гостей/фуршет</TextAnimate> 
+              <strong>16:00</strong> <TextAnimate animation="blurIn">- Сбор гостей/фуршет</TextAnimate>
             </li>
             <li>
               <Image
@@ -41,7 +41,7 @@ export const Shedule = () => {
                 className={styles["icons"]}
                 unoptimized
               />
-              <strong>16:40</strong><TextAnimate animation="blurIn" once> - Церемония</TextAnimate>
+              <strong>16:40</strong><TextAnimate animation="blurIn"> - Церемония</TextAnimate>
             </li>
             <li>
               <Image
@@ -50,7 +50,7 @@ export const Shedule = () => {
                 className={styles["icons"]}
                 unoptimized
               />
-              <strong>17:00</strong><TextAnimate animation="blurIn" once> - Праздничный ужин </TextAnimate>
+              <strong>17:00</strong><TextAnimate animation="blurIn"> - Праздничный ужин </TextAnimate>
             </li>
             <li>
               <Image
@@ -59,7 +59,7 @@ export const Shedule = () => {
                 className={styles["icons"]}
                 unoptimized
               />
-              <strong>21:00</strong><TextAnimate animation="blurIn" once> - Торт</TextAnimate>
+              <strong>21:00</strong><TextAnimate animation="blurIn"> - Торт</TextAnimate>
             </li>
             <li>
               <Image
@@ -68,7 +68,7 @@ export const Shedule = () => {
                 className={styles["icons"]}
                 unoptimized
               />
-              <strong>22:00</strong><TextAnimate animation="blurIn" once> - Танцы</TextAnimate>
+              <strong>22:00</strong><TextAnimate animation="blurIn"> - Танцы</TextAnimate>
             </li>
             <li>
               <Image
@@ -77,7 +77,7 @@ export const Shedule = () => {
                 className={styles["icons"]}
                 unoptimized
               />
-              <strong>23:00</strong><TextAnimate animation="blurIn" once> - Завершение вечера</TextAnimate>
+              <strong>23:00</strong><TextAnimate animation="blurIn"> - Завершение вечера</TextAnimate>
             </li>
           </ul>
         </section>
