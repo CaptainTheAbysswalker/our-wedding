@@ -32,7 +32,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-a, #wedding-date {
+a, .wedding-date {
   color: inherit;
   text-decoration: none;
   background: linear-gradient(to right, red, orange, rgb(185, 185, 5), green, rgb(4, 169, 169), blue, violet);

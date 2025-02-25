@@ -9,6 +9,7 @@ import Dinner from "../../../public/icons/dinner.gif";
 import Cake from "../../../public/icons/cake.gif";
 import Dance from "../../../public/icons/dance.gif";
 import Finish from "../../../public/icons/finish.gif";
+import { TextAnimate } from "../magicui/text-animate";
 
 export const Shedule = () => {
     return (
@@ -31,7 +32,7 @@ export const Shedule = () => {
                 className={styles["icons"]}
                 unoptimized
               />
-              <strong>16:00</strong> - Сбор гостей/фуршет
+              <strong>16:00</strong> <TextAnimate animation="blurIn" once>- Сбор гостей/фуршет</TextAnimate> 
             </li>
             <li>
               <Image
@@ -40,7 +41,7 @@ export const Shedule = () => {
                 className={styles["icons"]}
                 unoptimized
               />
-              <strong>16:40</strong> - Церемония
+              <strong>16:40</strong><TextAnimate animation="blurIn" once> - Церемония</TextAnimate>
             </li>
             <li>
               <Image
@@ -49,7 +50,7 @@ export const Shedule = () => {
                 className={styles["icons"]}
                 unoptimized
               />
-              <strong>17:00</strong> - Праздничный ужин
+              <strong>17:00</strong><TextAnimate animation="blurIn" once> - Праздничный ужин </TextAnimate>
             </li>
             <li>
               <Image
@@ -58,7 +59,7 @@ export const Shedule = () => {
                 className={styles["icons"]}
                 unoptimized
               />
-              <strong>21:00</strong> - Торт
+              <strong>21:00</strong><TextAnimate animation="blurIn" once> - Торт</TextAnimate>
             </li>
             <li>
               <Image
@@ -67,7 +68,7 @@ export const Shedule = () => {
                 className={styles["icons"]}
                 unoptimized
               />
-              <strong>22:00</strong> - Танцы
+              <strong>22:00</strong><TextAnimate animation="blurIn" once> - Танцы</TextAnimate>
             </li>
             <li>
               <Image
@@ -76,7 +77,7 @@ export const Shedule = () => {
                 className={styles["icons"]}
                 unoptimized
               />
-              <strong>23:00</strong> - Завершение вечера
+              <strong>23:00</strong><TextAnimate animation="blurIn" once> - Завершение вечера</TextAnimate>
             </li>
           </ul>
         </section>

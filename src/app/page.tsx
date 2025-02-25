@@ -18,6 +18,7 @@ import { ApprovedOrRejected } from "@/components/approve";
 import { DressCode } from "@/components/dressCode";
 import { Place } from "@/components/place";
 import { Greetings } from "@/components/greetings";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 export default function Home() {
   const [guestName, setGuestName] = React.useState("Дорогие гости");
@@ -79,9 +80,9 @@ export default function Home() {
         {!approved && !rejected && (
           <section>
             <h2 id="approve-title">Подтверждение</h2>
-            <p id="approve" className={styles["approve-text"]}>
+            <TextAnimate animation="blurIn" className={styles["approve-text"]} once>
               Пожалуйста подтведите свое присутствие до 01&nbsp;июля&nbsp;2025
-            </p>
+            </TextAnimate>
             <div className={styles["buttons"]}>
               <div
                 className={styles["button-wrapper"]}

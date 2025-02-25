@@ -1,4 +1,5 @@
 import React from "react";
+import { TextAnimate } from "../magicui/text-animate";
 
 export const ApprovedOrRejected = ({approved, rejected}: {approved: boolean, rejected: boolean}) => {
     const text = approved
@@ -10,6 +11,6 @@ const madeDecision = approved || rejected;
 
     return madeDecision ? (
         <section>
-          <p>{text}</p>
+          <TextAnimate animation="blurIn" duration={5} once>{text}</TextAnimate>
         </section>
       ) : null}
