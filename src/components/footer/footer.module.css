@@ -2,7 +2,11 @@
 .footer {
     text-align: center;
     padding: 20px;
-    background-color: #333;
+    background: #152331;
+    background: linear-gradient(
+    to right,
+    #152331,#000000
+  );
     color: white;
     font-family: 'Quicksand', sans-serif; /* Body font for footer */
     line-height: normal;
