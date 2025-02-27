@@ -180,7 +180,16 @@ h2 {
 .heart img {
     animation: heartbeat 1s infinite;
 }
-
+.box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.res {
+    content: url('../../public/images/arti.jpeg');
+    max-height: 400px;
+}
 @keyframes heartbeat {
     0% {
       transform: scale(1);

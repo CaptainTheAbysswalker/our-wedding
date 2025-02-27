@@ -4,7 +4,6 @@ import styles from "./page.module.css";
 import React, { useEffect } from "react";
 
 import { guestsList } from "./guests-list";
-import { ConfettiFireworks } from "./button";
 import { ScrollProgressDemo } from "@/components/scroll-progress/scroll";
 import { Loader } from "@/components/loader";
 // import { Map } from "@/components/map";
@@ -18,13 +17,11 @@ import { ApprovedOrRejected } from "@/components/approve";
 import { DressCode } from "@/components/dressCode";
 import { Place } from "@/components/place";
 import { Greetings } from "@/components/greetings";
-import { TextAnimate } from "@/components/magicui/text-animate";
 
 export default function Home() {
   const [guestName, setGuestName] = React.useState("Дорогие гости");
   const [showModal, setShowModal] = React.useState(false);
-  const [approved, setApproved] = React.useState(false);
-  const [rejected, setRejeced] = React.useState(false);
+
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -40,39 +37,19 @@ export default function Home() {
     pasteImage();
   }, []);
 
-  useEffect(() => {
-    const lsApproved = localStorage.getItem("approved");
-    const lsRejected = localStorage.getItem("rejected");
-
-    setApproved(Boolean(lsApproved));
-    setRejeced(Boolean(lsRejected));
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = showModal ? "hidden" : "auto";
   }, [showModal]);
 
-  const openModalonBtnClick = () => {
+  const openModalOnBtnClick = () => {
     const modal = document.getElementById("myModal");
-    setApproved(true);
     localStorage.setItem("approved", "true");
     setTimeout(() => {
       setShowModal(true);
       modal?.setAttribute("style", "display: flex; opacity: 1");
     }, 5000);
   };
-
-  const rejectedBtnClick = () => {
-    setRejeced(true);
-    localStorage.setItem("rejected", "true");
-  };
-
-  const changeDecision = ()=> {
-    localStorage.removeItem("approved");
-    localStorage.removeItem("rejected");
-    setApproved(false);
-    setRejeced(false);
-  }
 
   return (
     <>
@@ -85,26 +62,8 @@ export default function Home() {
         <DressCode />
         <Details />
         <Shedule />
-
-        {!approved && !rejected && (
-          <section>
-            <h2 id="approve-title">Подтверждение</h2>
-            <TextAnimate animation="blurIn">
-              Пожалуйста подтведите свое присутствие
-            </TextAnimate>
-            <TextAnimate animation="blurIn" className={"approve-text"}>до 01&nbsp;июля&nbsp;2025</TextAnimate>
-            <div className={styles["buttons"]}>
-              <div onClick={openModalonBtnClick}>
-                <ConfettiFireworks />
-              </div>
-              <button type="button" onClick={rejectedBtnClick}>
-                Отклонить
-              </button>
-            </div>
-          </section>
-        )}
-        <ApprovedOrRejected approved={approved} rejected={rejected} changeDecision={changeDecision}/>
-         <Modal setShowModal={setShowModal} guest={guestName} />
+        <ApprovedOrRejected openModalOnBtnClick={openModalOnBtnClick}/>
+        <Modal setShowModal={setShowModal} guest={guestName} />
         <Footer />
       </main>
     </>
