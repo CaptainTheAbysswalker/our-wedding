@@ -77,5 +77,6 @@
     }
   ],
   "showPageTitles": false,
-  "completeText": "Отправить"
+  "completeText": "Отправить",
+  "completedHtml": "Спасибо"
 }

@@ -4,7 +4,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Model, SurveyModel } from "survey-core";
 import { LayeredLightPanelless } from "survey-core/themes";
 import { Survey } from "survey-react-ui";
-import model from "./helers/formModel.json";
+import model from "./helpers/formModel.json";
 import { useTelegram } from "@/lib/useTelegram";
 
 export const Form = ({

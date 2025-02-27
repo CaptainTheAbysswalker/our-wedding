@@ -10,6 +10,8 @@ export const Modal = ({
   guest: string;
 }) => {
     const handleCloseModal = () => {
+        const modal = document.getElementById("myModal");
+        modal?.setAttribute("style", "display: none; opacity: 0");
         setShowModal(false);
     }
   return (

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Image, { StaticImageData } from "next/image";
-// import HeroImage0 from '../../../public/images/hero.jpg';
 
 import styles from "./hero.module.css";
 

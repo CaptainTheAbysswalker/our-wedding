@@ -53,10 +53,12 @@ export default function Home() {
   }, [showModal]);
 
   const openModalonBtnClick = () => {
+    const modal = document.getElementById("myModal");
     setApproved(true);
     localStorage.setItem("approved", "true");
     setTimeout(() => {
       setShowModal(true);
+      modal?.setAttribute("style", "display: flex; opacity: 1");
     }, 5000);
   };
 
@@ -102,7 +104,7 @@ export default function Home() {
           </section>
         )}
         <ApprovedOrRejected approved={approved} rejected={rejected} changeDecision={changeDecision}/>
-        {showModal && <Modal setShowModal={setShowModal} guest={guestName} />}
+         <Modal setShowModal={setShowModal} guest={guestName} />
         <Footer />
       </main>
     </>
