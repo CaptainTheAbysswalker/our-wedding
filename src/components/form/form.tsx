@@ -9,7 +9,7 @@ import { useTelegram } from "@/lib/useTelegram";
 
 export const Form = ({
   guest,
-  handleCloseModal,
+  // handleCloseModal,
 }: {
   guest: string;
   handleCloseModal: () => void;
@@ -39,7 +39,7 @@ export const Form = ({
       }
 
       await sendMessage(message);
-      handleCloseModal();
+      // handleCloseModal();
     },
     [sendMessage]
   );
