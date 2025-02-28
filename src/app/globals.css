@@ -43,6 +43,15 @@ a, .wedding-date {
   animation: rainbow 20s ease infinite;
 }
 
+.wedding-date {
+  user-select: none;
+  cursor: pointer;
+}
+
+.sd-completedpage {
+  padding: 0 24px;
+}
+
 @-webkit-keyframes rainbow {
     0% { background-position: 0% 50% }
     50% { background-position: 100% 50% }
@@ -68,8 +77,8 @@ section {
 h2 {
     font-family: var(--font-great-vibes);
     font-size: 2.6rem;
-    line-height: 2rem;
-  margin-bottom: 1.5rem;
+    line-height: normal;
+    margin-bottom: 1.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
