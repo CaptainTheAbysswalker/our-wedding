@@ -187,7 +187,7 @@ h2 {
     margin-top: 10px;
 }
 .res {
-    content: url('../../public/images/arti.jpeg');
+    content: url('../../public/images/arti.webp');
     max-height: 400px;
 }
 @keyframes heartbeat {
@@ -200,6 +200,10 @@ h2 {
     100% {
       transform: scale(1);
     }
+  }
+
+  .sd-completedpage:before {
+    height: 1rem !important;
   }
 
 

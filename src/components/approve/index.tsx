@@ -20,7 +20,7 @@ export const ApprovedOrRejected = ({  openModalOnBtnClick}: { openModalOnBtnClic
         setApproved(false);
         setRejeced(false);
       }
-      const approvedBtnClick = () => {   
+      const approvedBtnClick = () => {
         openModalOnBtnClick()
          setApproved(true);}
     const text = approved
@@ -52,7 +52,7 @@ const madeDecision = approved || rejected;
         <div onClick={approvedBtnClick}>
           <ConfettiFireworks />
         </div>
-        <button type="button" onClick={rejectedBtnClick}>
+        <button type="button" onClick={rejectedBtnClick} className={styles["rejectedBtn"]}>
           Отклонить
         </button>
       </div>

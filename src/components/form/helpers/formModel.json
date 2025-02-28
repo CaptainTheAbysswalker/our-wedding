@@ -72,7 +72,14 @@
           "title": "Будет ли с вами на празднике ребенок?",
           "labelTrue": "Да",
           "labelFalse": "Нет"
-        }
+        },
+        {
+            "type": "boolean",
+            "name": "registration",
+            "title": "Хотите ли вы присутствовать на регистрации в ЗАГСе?",
+            "labelTrue": "Да",
+            "labelFalse": "Нет"
+          }
       ]
     }
   ],

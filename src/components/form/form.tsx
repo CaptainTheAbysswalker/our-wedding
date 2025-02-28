@@ -9,7 +9,7 @@ import { useTelegram } from "@/lib/useTelegram";
 
 export const Form = ({
   guest,
-  // handleCloseModal,
+  handleCloseModal,
 }: {
   guest: string;
   handleCloseModal: () => void;
@@ -38,8 +38,15 @@ export const Form = ({
         message += `%0AС детьми: ${data["withChild"] ? 'Да' : 'Нет'}`;
       }
 
+      if (data["registration"]) {
+        message += `%0AХотите ли вы присутствовать на регистрации в ЗАГСе: ${data["restrictions"] ? 'Да' : 'Нет'}`;
+      }
+
       await sendMessage(message);
-      // handleCloseModal();
+
+      setTimeout(() => {
+        handleCloseModal();
+      }, 3000)
     },
     [sendMessage]
   );

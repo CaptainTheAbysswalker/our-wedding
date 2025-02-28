@@ -25,7 +25,7 @@ export default function Home() {
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
-    const guest = searchParams.get("guest");
+    const guest = searchParams.get("guest_id");
 
     if (guest) {
       const guestFromUrl = guestsList[`${guest}`];
