@@ -64,7 +64,7 @@ export default function Home() {
         <DressCode />
         <Details />
         <Shedule />
-        <ApprovedOrRejected openModalOnBtnClick={openModalOnBtnClick}/>
+        <ApprovedOrRejected guestName={guestName} openModalOnBtnClick={openModalOnBtnClick}/>
         <Modal setShowModal={setShowModal} guest={guestName} />
         <Footer />
       </main>
