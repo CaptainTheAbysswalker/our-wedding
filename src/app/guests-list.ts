@@ -24,3 +24,5 @@ export const guestsList: {[key: string]: string} = {
     '12S': 'Дорогие Павел и Юлия',
     'test': 'Дорогая Мадина',
 }
+
+export const soloGuests = ['5V', '6V', '7V', '9V', '6S', '10S']

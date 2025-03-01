@@ -2,7 +2,7 @@ import React from "react";
 import { TextAnimate } from "../magicui/text-animate";
 import { CALENDAR_URL } from "@/lib/constants";
 
-export const Greetings = ({guestName}: {guestName: string}) => {
+export const Greetings = ({guestName, isSolo}: {guestName: string, isSolo: boolean}) => {
   const addToCalendarHandler = () => {
     window?.open(CALENDAR_URL, "_blank")?.focus();
   }
@@ -10,8 +10,7 @@ export const Greetings = ({guestName}: {guestName: string}) => {
     <section>
       <h2 id="greetings-title">{guestName}!</h2>
       <TextAnimate animation="blurIn">
-        С огромным удовольствием приглашаем Вас на нашу свадьбу, которая
-        состоится
+        {`С огромным удовольствием приглашаем ${isSolo ? 'тебя' : 'Вас'} на нашу свадьбу, которая состоится`}
       </TextAnimate>
       <p onClick={addToCalendarHandler} className="wedding-date">13 сентября 2025 года</p>
     </section>)

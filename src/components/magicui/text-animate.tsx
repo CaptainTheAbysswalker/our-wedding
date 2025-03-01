@@ -312,7 +312,7 @@ export function TextAnimate({
   as: Component = "p",
   startOnView = true,
   once = true,
-  by = "word",
+  by = "text",
   animation = "fadeIn",
   ...props
 }: TextAnimateProps) {

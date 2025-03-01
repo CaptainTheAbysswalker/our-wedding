@@ -3,7 +3,7 @@
 import styles from "./page.module.css";
 import React, { useEffect } from "react";
 
-import { guestsList } from "./guests-list";
+import { guestsList, soloGuests } from "./guests-list";
 import { ScrollProgressDemo } from "@/components/scroll-progress/scroll";
 import { Loader } from "@/components/loader";
 // import { Map } from "@/components/map";
@@ -21,6 +21,7 @@ import { Greetings } from "@/components/greetings";
 export default function Home() {
   const [guestName, setGuestName] = React.useState("Дорогие гости");
   const [showModal, setShowModal] = React.useState(false);
+  const [isSolo, setIsSolo] = React.useState(false);
 
 
   useEffect(() => {
@@ -28,6 +29,7 @@ export default function Home() {
     const guest = searchParams.get("guest_id");
 
     if (guest) {
+      setIsSolo(soloGuests.includes(guest));
       const guestFromUrl = guestsList[`${guest}`];
       setGuestName(guestFromUrl);
     }
@@ -57,7 +59,7 @@ export default function Home() {
       <ScrollProgressDemo />
       <main className={styles.main}>
         <Hero />
-        <Greetings guestName={guestName} />
+        <Greetings isSolo={isSolo} guestName={guestName} />
         <Place />
         <DressCode />
         <Details />
