@@ -47,10 +47,8 @@ export default function Home() {
   const openModalOnBtnClick = () => {
     const modal = document.getElementById("myModal");
     localStorage.setItem("approved", "true");
-    setTimeout(() => {
-      setShowModal(true);
+    setShowModal(true);
       modal?.setAttribute("style", "display: flex; opacity: 1");
-    }, 5000);
   };
 
   return (

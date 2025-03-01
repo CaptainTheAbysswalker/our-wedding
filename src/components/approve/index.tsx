@@ -30,10 +30,16 @@ export const ApprovedOrRejected = ({
     setRejeced(false);
   };
   const approvedBtnClick = () => {
-    openModalOnBtnClick();
+    setTimeout(() => {
+      openModalOnBtnClick();
+    }, 5000);
     setApproved(true);
     sendMessage(`Гость ${guestName} принял приглашение`)
   };
+
+  const openGuestForm=()=>{
+    openModalOnBtnClick();
+  }
   const text = approved
     ? "Мы очень рады, что вы разделите этот счастливый день с нами. Увидимся на нашей свадьбе!"
     : "Очень жаль, что вы не сможете разделить этот счастливый день с нами. ";
@@ -53,7 +59,10 @@ export const ApprovedOrRejected = ({
       <TextAnimate animation="blurIn" duration={5} className="approve-text">
         {text}
       </TextAnimate>
+      <div className={styles.btns}>
+      <ShinyButton onClick={openGuestForm}>Заполнить анкету гостя</ShinyButton>
       <ShinyButton onClick={changeDecision}>Изменить решение</ShinyButton>
+      </div>
     </section>
   ) : (
     <section>

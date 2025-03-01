@@ -1,3 +1,11 @@
 .rejectedBtn {
     padding-top: 1rem;
 }
+
+.btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
