@@ -18,8 +18,10 @@ import { DressCode } from "@/components/dressCode";
 import { Place } from "@/components/place";
 import { Greetings } from "@/components/greetings";
 
+const defaultGuest = "Дорогие гости";
+
 export default function Home() {
-  const [guestName, setGuestName] = React.useState("Дорогие гости");
+  const [guestName, setGuestName] = React.useState(defaultGuest);
   const [showModal, setShowModal] = React.useState(false);
   const [isSolo, setIsSolo] = React.useState(false);
 
@@ -31,7 +33,7 @@ export default function Home() {
     if (guest) {
       setIsSolo(soloGuests.includes(guest));
       const guestFromUrl = guestsList[`${guest}`];
-      setGuestName(guestFromUrl);
+      setGuestName(guestFromUrl || defaultGuest);
     }
   }, []);
 
