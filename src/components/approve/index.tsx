@@ -71,7 +71,7 @@ export const ApprovedOrRejected = ({
         Пожалуйста подтведите свое присутствие
       </TextAnimate>
       <TextAnimate animation="blurIn" className={"approve-text"}>
-        до 01&nbsp;июля&nbsp;2025
+        до 01&nbsp;августа&nbsp;2025
       </TextAnimate>
       <div className={styles["buttons"]}>
         <div onClick={approvedBtnClick}>
